@@ -1,0 +1,277 @@
+/* Color Variables */
+:root {
+    --mainBackgroundColor: #1b1b32;
+    --resultBackgroundColor: #f0f1f7;
+    --white: #f0f1f7;
+    --boxShadow: #aeacb2;
+    --purple: #7f21ab;
+    --typeSteel: #abaabb;
+    --typeGhost: #9995d0;
+    --typeGrass:  #78cc55;
+    --typePoison: #c68bb7;
+    --typeFire: #ff6f52;
+    --typeFlying: #8899ff;
+    --typeWater: #42a1ff;
+    --typeBug: #aabb23;
+    --typePsychic: #ff66a3;
+    --typeDark: #b59682;
+    --typeFairy: #ed99ed;
+    --typeRock: #baaa66;
+    --typeGround: #dfba52;   
+    --typeElectric: #fecc33; 
+    --typeDragon: #9e93f1;
+    --typeIce: #66ccfe;
+    --typeNormal: #b7b7aa; 
+    --typeFighting: #d3887e;
+}
+
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+*,*::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--mainBackgroundColor);
+}
+
+#app-title {
+    text-align: center;
+    font-size: 38px;
+    color: var(--white);
+}
+
+#main {
+    width: 30%;
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 9px 9px 0px var(--boxShadow);
+}
+
+#search-container {
+    margin: 0 auto;
+}
+
+#search-label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#search-input {
+    height: 37px;
+    position: relative;
+    right: 12px;
+    width: 187px;
+}
+
+#search-button {
+    height: 45px;
+    width: 80px;
+    position: relative;
+    right: 7px;
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0px 2px 3px #282424;
+}
+
+#search-button:hover {
+    filter: opacity(70%);
+}
+
+#search-button:active {
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0px #282424;
+}
+
+#results-container {
+
+}
+
+#pokemon-name-id-container{
+    display: flex;
+    margin-left: 23px;
+    margin-bottom: 5px;
+    font-size:19px;
+    
+}
+
+#pokemon-name{
+    margin-bottom: 0;
+    padding-right:5px;
+}
+
+#pokemon-id{
+    margin-bottom: 0;
+}
+
+#pokemon-weight-height-container{
+    display: flex;
+    margin-left: 23px;
+}
+
+#weight{
+    margin-top: 0;
+    padding-right: 7px;
+}
+
+#height{
+    margin-top: 0;
+}
+
+#sprite-container{
+    display:flex;
+    justify-content: center;
+}
+
+#sprite{
+    width: 180px;
+    height: 180px;
+}
+
+#types{
+    display:flex;
+    align-items: center;
+    width: 69%;
+    margin-left: 18px;
+}
+
+.type {
+    text-align: center;
+    margin-left: 7px;
+    padding-top: 7px;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+table {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 25px;
+    color: var(--white);
+    border:transparent;
+    border-spacing: 4px;
+}
+
+thead{
+
+}
+
+tr{
+
+}
+
+th{
+    background-color: var(--purple);
+    height: 41px;
+}
+
+tbody{
+
+}
+
+td{
+    height: 41px;
+    background-color: var(--purple);
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Used as the background colors for the various types attributes */
+.steel{
+    background-color: var(--typeSteel);
+}
+
+.ghost {
+    background-color: var(--typeGhost);
+}
+
+.grass {
+    background-color: var(--typeGrass);
+}
+
+.poison {
+    background-color: var(--typePoison);
+}
+
+.fire {
+    background-color: var(--typeFire);
+}
+
+.flying {
+    background-color: var(--typeFlying);
+}
+
+.water {
+    background-color: var(--typeWater);
+}
+
+.bug {
+    background-color: var(--typeBug);
+}
+
+.psychic {
+    background-color: var(--typePsychic);
+}
+
+.dark {
+    background-color: var(--typeDark);
+}
+
+.fairy {
+    background-color: var(--typeFairy);
+}
+
+.rock {
+    background-color: var(--typeRock);
+}
+
+.ground {
+    background-color: var(--typeGround);
+}
+
+.electric {
+    background-color: var(--typeElectric);
+}
+
+.dragon {
+    background-color: var(--typeDragon);
+}
+
+.ice {
+    background-color: var(--typeIce);
+}
+
+.normal {
+    background-color: var(--typeNormal);
+}
+
+.fighting {
+    background-color: var(--typeFighting);
+}
