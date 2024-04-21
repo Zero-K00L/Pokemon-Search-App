@@ -192,8 +192,18 @@ td{
 
 
 
+#test-btn {
+    margin: 0 auto;
+    background-color: red;
+    height: 50px;
+    width: 150px;
+    cursor:pointer;
+}
 
 
+#test-btn:hover {
+    filter: opacity(70%);
+}
 
 
 
