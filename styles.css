@@ -136,7 +136,7 @@ body {
     justify-content: center;
 }
 
-#sprite{
+.sprite{
     width: 180px;
     height: 180px;
 }
