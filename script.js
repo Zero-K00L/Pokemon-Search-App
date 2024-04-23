@@ -12,13 +12,12 @@ const specialAttack = document.getElementById('special-attack');
 const specialDefense = document.getElementById('special-defense');
 const speed = document.getElementById('speed');
 const spriteContainer = document.getElementById('sprite-container');
-
 const typesClasses = document.querySelectorAll('.type');
-
-const testBtn = document.getElementById('test-btn');
+const oneType = document.querySelector('.type');
 
 const pokemonURL = 'https://pokeapi-proxy.freecodecamp.rocks/api/pokemon'
 
+// fetches data from pokemon api by checking by adding the users input to the end of the URL to see if it exists
 const fetchPokemonData = async () => {
     let input = userInput.value.toLowerCase();
     try {
@@ -33,6 +32,58 @@ const fetchPokemonData = async () => {
 };
 
 const deconIdNameURL = (data) => {
+    clearFields();
+    let pokeToFind = userInput.value.toLowerCase();
+    const {height, id, name, order, sprites, stats, types, weight} = data;
+    pokemonName.textContent = name.toUpperCase();
+    pokemonId.textContent = '#' + id;
+    pokemonHeight.textContent = 'height: '+ height;
+    pokemonWeight.textContent = 'weight: '+ weight;
+    spriteContainer.innerHTML = `<img id="sprite" src="${sprites['front_default']}" alt="an image of ${name}">`;
+    console.log(types.length)
+    if(types.length == 1) {
+        oneType.textContent = types[0].type.name;
+        oneType.classList.add(`${types[0].type.name}`);
+    }
+    else {
+        typesClasses.forEach((type, index) => {
+            type.textContent = types[index].type.name;
+            type.classList.add(`${types[index].type.name}`);
+        });
+    }
+    hp.textContent = stats[0].base_stat;
+    attack.textContent = stats[1].base_stat;
+    defense.textContent = stats[2].base_stat;
+    specialAttack.textContent = stats[3].base_stat;
+    specialDefense.textContent = stats[4].base_stat;
+    speed.textContent = stats[5].base_stat;
+};
+
+// Clears all the pokemon Data fields
+const clearFields = () => {
+    pokemonName.textContent = ''
+    pokemonId.textContent = ''
+    pokemonHeight.textContent = ''
+    pokemonWeight.textContent = ''
+    spriteContainer.innerHTML = ''
+    oneType.textContent = '';
+    typesClasses.forEach((type, index) => {
+        type.textContent = '';
+        type.classList.remove(type.classList[1]);
+    });
+    hp.textContent = ''
+    attack.textContent = ''
+    defense.textContent = ''
+    specialAttack.textContent = ''
+    specialDefense.textContent = ''
+    speed.textContent = ''
+};
+
+searchBtn.addEventListener('click', fetchPokemonData);
+
+
+
+/* const deconIdNameURL = (data) => {
     let pokeToFind = userInput.value.toLowerCase();
     const {height, id, name, order, sprites, stats, types, weight} = data;
     pokemonName.textContent = name.toUpperCase();
@@ -50,7 +101,16 @@ const deconIdNameURL = (data) => {
     specialAttack.textContent = stats[3].base_stat;
     specialDefense.textContent = stats[4].base_stat;
     speed.textContent = stats[5].base_stat;
-};
+}; */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -75,7 +135,7 @@ const pokemonINFO = (dataDetails) => {
 
 
 
-fetchPokemonData();
+/* fetchPokemonData(); */
 
 
 
