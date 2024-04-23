@@ -42,13 +42,11 @@ const deconIdNameURL = (data) => {
     spriteContainer.innerHTML = `<img id="sprite" src="${sprites['front_default']}" alt="an image of ${name}">`;
     console.log(types.length)
     if(types.length == 1) {
-        oneType.textContent = types[0].type.name;
-        oneType.classList.add(`${types[0].type.name}`);
+        typesContainer.innerHTML = `<p class="type ${types[0].type.name}">${types[0].type.name}</p>`
     }
     else {
-        typesClasses.forEach((type, index) => {
-            type.textContent = types[index].type.name;
-            type.classList.add(`${types[index].type.name}`);
+        types.forEach((type, index) => {
+            typesContainer.innerHTML += `<p class="type ${types[index].type.name}">${types[index].type.name}</p>`
         });
     }
     hp.textContent = stats[0].base_stat;
@@ -66,7 +64,7 @@ const clearFields = () => {
     pokemonHeight.textContent = ''
     pokemonWeight.textContent = ''
     spriteContainer.innerHTML = ''
-    oneType.textContent = '';
+    typesContainer.innerHTML = '';
     typesClasses.forEach((type, index) => {
         type.textContent = '';
         type.classList.remove(type.classList[1]);
@@ -80,6 +78,21 @@ const clearFields = () => {
 };
 
 searchBtn.addEventListener('click', fetchPokemonData);
+
+
+
+
+/* if(types.length == 1) {
+    typesContainer.innerHTML = `<p ></p>`
+    oneType.textContent = types[0].type.name;
+    oneType.classList.add(`${types[0].type.name}`);
+}
+else {
+    typesClasses.forEach((type, index) => {
+        type.textContent = types[index].type.name;
+        type.classList.add(`${types[index].type.name}`);
+    });
+} */
 
 
 
